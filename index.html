@@ -317,11 +317,7 @@ a.qg-btn.qg-pdf { padding:3px 10px; font-size: var(--cds-font-size-caption); }
 #kpi-b-base .bi-tile .qg-mn { color: var(--color-fg); }
 #kpi-b-base .bi-tile .qg-ml { color: var(--c); font-weight:700; font-size: clamp(0.55rem, 2.7cqi, 0.72rem); letter-spacing:.03em; white-space:nowrap; }
 #kpi-b-base .bi-tile .qg-mn { font-size: clamp(1.1rem, 7cqi, var(--cds-font-size-title)); }
-#kpi-b-base .bi-pct { display:flex; flex-direction:column; align-items:center; gap:3px; width:80%; font-size:10.5px; white-space:nowrap; color: var(--color-fg-muted); }
-#kpi-b-base .bi-bar { display:block; width:100%; height:4px; border-radius:999px; background: color-mix(in srgb, var(--c) 15%, transparent); overflow:hidden; }
-#kpi-b-base .bi-bar i { display:block; height:100%; background: var(--c); border-radius:999px; }
 #kpi-b-base .bi-link { margin-top:auto; padding:4px 2px 0; border:0; background:none; color: var(--c); font: inherit; font-size:11px; font-weight:700; cursor:pointer; white-space:nowrap; }
-#kpi-b-base .bi-link:hover { text-decoration: underline; }
 #kpi-b-base .t-act .qg-ml, #kpi-b-base .t-act .bi-link, #kpi-b-base .t-act .bi-ic { color:#2E8B32; }
 #kpi-b-base .t-ina .qg-ml, #kpi-b-base .t-ina .bi-link { color:#5F6B7E; }
 #kpi-b-base .bi-link:focus-visible { outline:2px solid var(--qg-green); outline-offset:2px; border-radius:4px; }
@@ -377,7 +373,7 @@ a.qg-btn.qg-pdf { padding:3px 10px; font-size: var(--cds-font-size-caption); }
 .qg-kpis { display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--cds-gap-md); }
 /* Base Instalada: las 4 tarjetas en una fila; 2 + 2 en anchos medios; 1 por fila en angosto (nunca una sola tarjeta suelta) */
 #base-instalada { container-type: inline-size; }
-#kpis-base { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+#kpis-base { grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr) minmax(0, 1fr) minmax(0, .95fr); } /* Monto un poco más ancha */
 @container (max-width: 1000px) { #kpis-base { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @container (max-width: 520px) { #kpis-base { grid-template-columns: minmax(0, 1fr); } }
 .qg-card { background: var(--color-panel); border:1px solid var(--color-border-line); border-radius:12px; padding: var(--cds-pad-lg); box-shadow: 0 1px 2px rgba(10,42,82,.06); min-width:0; }
@@ -423,10 +419,6 @@ a.qg-btn.qg-pdf { padding:3px 10px; font-size: var(--cds-font-size-caption); }
 .qg-ct { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom: var(--cds-gap-sm); }
 .qg-ct h3 { margin:0; font-family: var(--qg-disp); font-size: var(--cds-font-size-heading); font-weight:700; color: var(--color-fg); }
 .qg-note { margin:0 0 var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
-.qg-ficha { display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: 10px 16px; margin-bottom: var(--cds-gap-md); padding:12px; border-radius:8px; background: color-mix(in srgb, var(--qg-navy) 6%, transparent); }
-.qg-ficha div { display:flex; flex-direction:column; gap:2px; min-width:0; }
-.qg-ficha span:first-child { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); text-transform:uppercase; letter-spacing:.05em; font-weight:600; }
-.qg-ficha span:last-child { font-size: var(--cds-font-size-body); font-weight:600; overflow-wrap:anywhere; }
 .qg-tbox { max-height:520px; overflow:auto; border:1px solid var(--color-border-line); border-radius:8px; }
 .qg-t { width:100%; border-collapse:collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
 .qg-t th { position:sticky; top:0; background: var(--color-panel); text-align:left; padding:0; border-bottom:2px solid var(--qg-navy); z-index:1; }
@@ -454,7 +446,7 @@ a.qg-btn.qg-pdf { padding:3px 10px; font-size: var(--cds-font-size-caption); }
 #kpi-b-base .bi-tile { padding:6px 4px 6px; gap:1px; }
 #kpi-b-base .bi-ic { width:26px; height:26px; margin-bottom:0; } #kpi-b-base .bi-ic svg { width:15px; height:15px; }
 #kpi-b-base .bi-tile .qg-mn { font-size: clamp(1rem, 5.5cqi, 1.5rem); line-height:1.1; }
-#kpi-b-base .bi-pct { gap:2px; font-size:10px; } #kpi-b-base .bi-link { padding-top:2px; font-size:10.5px; }
+
 #kpi-b-base .bi-tiles { margin-top:0; }
 .qg-sbar { display:flex; align-items:center; gap:8px; margin-top:4px; } .qg-sbar i { display:block; height:6px; border-radius:999px; background: var(--qg-navy); max-width:70%; } .qg-sbar em { font-style:normal; font-size:10.5px; color: var(--color-fg-muted); white-space:nowrap; }
 .qg-stage li.won .qg-sbar i { background: var(--qg-green); } .qg-stage li.lost .qg-sbar i { background:#C5221F; opacity:.75; } /* sin el gráfico 'Oportunidades por stage' */
@@ -638,7 +630,6 @@ background: var(--qg-canvas); border-radius: 28px; padding: 24px; gap: 20px; }
 .qg-lin-sep { border-top-style: solid; border-top-color: var(--qg-line-soft); }
 
 /* Bloques internos */
-.qg-ficha { border-radius: 16px; padding: 16px 18px; background: var(--qg-canvas); }
 .qg-pdet { border-radius: 16px; padding: 18px; }
 .qg-oppdet { border-radius: 14px; border-color: transparent; background: var(--qg-canvas); }
 .qg-banner { border-radius: 12px; padding: 10px 14px; }
@@ -680,6 +671,24 @@ a.qg-btn.qg-pdf { padding: 4px 12px; }
 .qg-chart svg line[stroke="var(--cds-chart-grid)"] { stroke-opacity: .55; }
 .qg-foot { padding: 0 8px; }
 
+/* Tarjetas de indicadores: menos espacio entre tarjetas y menos margen interno, para que entren los montos completos */
+#kpis-base, #kpis-servicios { gap: 10px; }
+#kpis-base > .qg-card { padding-left: 16px; padding-right: 16px; }
+#kpis-servicios > .qg-card.qg-tkc { padding-left: 14px; padding-right: 14px; column-gap: 12px; }
+.qg-tab[disabled], .qg-tab[disabled]:hover { cursor:not-allowed; opacity:.55; background:none !important; }
+.qg-tab-dev { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; margin-left:6px; padding:2px 6px; border-radius:999px; background: rgba(230,126,0,.14); color:#C26100; vertical-align:2px; }
+/* Base Instalada: sin % del total; el detalle es un botón + */
+#kpi-b-base .bi-link { margin-top:auto; width:24px; height:24px; padding:0 !important; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:17px !important; font-weight:700; line-height:1; background: color-mix(in srgb, var(--c) 14%, transparent); }
+#kpi-b-base .bi-link[hidden] { display:none; }
+#kpi-b-base .bi-link:hover { text-decoration:none; background: color-mix(in srgb, var(--c) 26%, transparent); }
+#kpi-b-base .t-act .bi-link { background: rgba(46,139,50,.14); } #kpi-b-base .t-act .bi-link:hover { background: rgba(46,139,50,.26); }
+/* Tarjetas Hs/Monto/Tarifa: el texto se achica solo (--k) si no entra, para dejar siempre margen con el borde */
+#kpis-base .qg-lin { --k: 1; }
+#kpis-base .qg-lin-l { font-size: calc(clamp(0.55rem, 2.7cqi, var(--cds-font-size-caption)) * var(--k)); }
+#kpis-base .qg-lin-n:not(.qg-lin-dm) { font-size: calc(clamp(0.75rem, 4.3cqi, 1.15rem) * var(--k)); }
+#kpis-base .qg-lin-py { font-size: calc(clamp(0.55rem, 2.6cqi, 0.72rem) * var(--k)); }
+#kpis-base .qg-var { font-size: calc(clamp(0.6rem, 3cqi, var(--cds-font-size-body)) * var(--k)); }
+#kpis-base .qg-lin-dm .qg-var { font-size: calc(clamp(0.72rem, 4cqi, var(--cds-font-size-body)) * var(--k)); }
 /* Pantallas chicas */
 @media (max-width: 640px) {
 .qg { padding: 12px; border-radius: 18px; gap: 14px; }
@@ -705,7 +714,7 @@ a.qg-btn.qg-pdf { padding: 4px 12px; }
 
 <nav class="qg-tabs" role="tablist" aria-label="Solapas">
 <button class="qg-tab" role="tab" id="tab-base-instalada" data-tab="base-instalada" aria-selected="true">Base Instalada</button>
-<button class="qg-tab" role="tab" id="tab-servicios" data-tab="servicios" aria-selected="false">Servicios</button>
+<button class="qg-tab" role="tab" id="tab-servicios" data-tab="servicios" aria-selected="false" disabled aria-disabled="true" title="En desarrollo: disponible próximamente">Servicios <span class="qg-tab-dev">en desarrollo</span></button>
 </nav>
 
 <!-- ============ SOLAPA 1: BASE INSTALADA ============ -->
@@ -756,10 +765,10 @@ a.qg-btn.qg-pdf { padding: 4px 12px; }
 <div class="qg-card qg-kpi qg-mini" id="kpi-b-base">
 <div class="qg-over">Base Instalada <span class="qg-info" tabindex="0" role="button" aria-label="Qué considera">i</span><span class="qg-tipbox" role="tooltip"><b>Base Instalada</b><ul><li><b>Clientes:</b> total histórico de clientes con al menos un proyecto con 1 hora devengada o más, desde el primer año con datos hasta el mes actual.</li><li><b>Proyectos:</b> proyectos de esos clientes con al menos 1 hora devengada, desde el primer dato hasta el mes actual. Activos e Inactivos: apertura de esos proyectos según su Estado de Proyecto. No responde a Año ni Mes.</li><li><b>Excluye QG SAU (C0234):</b> empresa de Quales, no es un cliente.</li></ul></span></div>
 <div class="qg-mrow qg-mrow4 bi-tiles">
-<div class="bi-tile qg-mcli t-cli"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 10h.01M15 10h.01M9 13.5h.01M15 13.5h.01"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_cli"></span><span class="qg-ml">Clientes</span><span class="qg-sub" data-k="bi_cli_py"></span><button class="bi-link" type="button" id="bi-cli-det" hidden>Detalle ›</button></div>
-<div class="bi-tile qg-mproy t-tot"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_tot"></span><span class="qg-ml">Proyectos</span><span class="qg-sub" data-k="bi_tot_py"></span><button class="bi-link" type="button" id="bi-proy-det" hidden>Detalle ›</button></div>
-<div class="bi-tile t-act"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_act"></span><span class="qg-ml">Activos</span><span class="bi-pct" data-k="bi_act_pct"></span><span class="qg-sub" data-k="bi_act_py"></span><button class="bi-link" type="button" id="bi-act-det" hidden>Detalle ›</button></div>
-<div class="bi-tile t-ina"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_ina"></span><span class="qg-ml">Inactivos</span><span class="bi-pct" data-k="bi_ina_pct"></span><span class="qg-sub" data-k="bi_ina_py"></span><button class="bi-link" type="button" id="bi-ina-det" hidden>Detalle ›</button></div>
+<div class="bi-tile qg-mcli t-cli"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 10h.01M15 10h.01M9 13.5h.01M15 13.5h.01"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_cli"></span><span class="qg-ml">Clientes</span><span class="qg-sub" data-k="bi_cli_py"></span><button class="bi-link" type="button" id="bi-cli-det" hidden aria-label="Ver detalle" title="Ver detalle">+</button></div>
+<div class="bi-tile qg-mproy t-tot"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_tot"></span><span class="qg-ml">Proyectos</span><span class="qg-sub" data-k="bi_tot_py"></span><button class="bi-link" type="button" id="bi-proy-det" hidden aria-label="Ver detalle" title="Ver detalle">+</button></div>
+<div class="bi-tile t-act"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_act"></span><span class="qg-ml">Activos</span><span class="qg-sub" data-k="bi_act_py"></span><button class="bi-link" type="button" id="bi-act-det" hidden aria-label="Ver detalle" title="Ver detalle">+</button></div>
+<div class="bi-tile t-ina"><span class="bi-ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/></svg></span><span class="qg-mn dash-skeleton" data-k="bi_ina"></span><span class="qg-ml">Inactivos</span><span class="qg-sub" data-k="bi_ina_py"></span><button class="bi-link" type="button" id="bi-ina-det" hidden aria-label="Ver detalle" title="Ver detalle">+</button></div>
 </div>
 </div>
 </div>
@@ -1178,7 +1187,7 @@ const br = () => document.createElement('br');
 const tone = (v, goodIfPositive = true) => (ok(v) && v !== 0 ? ((v > 0) === goodIfPositive ? 'qg-pos' : 'qg-neg') : '');
 
 /* Tabs */
-let tab = location.hash.slice(1) === 'servicios' ? 'servicios' : 'base-instalada';
+let tab = 'base-instalada'; /* Servicios: en mantenimiento/desarrollo, sin acceso por ahora */
 const showTab = (t, link) => {
 tab = t;
 $$('.qg-tab').forEach((x) => x.setAttribute('aria-selected', String(x.dataset.tab === t)));
@@ -1186,7 +1195,7 @@ $$('.qg-page').forEach((p) => { p.hidden = p.id !== t; });
 if (link) dash.setLink(t);
 draw();
 };
-$$('.qg-tab').forEach((x) => x.addEventListener('click', () => showTab(x.dataset.tab, true)));
+$$('.qg-tab').forEach((x) => x.addEventListener('click', () => { if (!x.disabled) showTab(x.dataset.tab, true); }));
 
 /* Filtros */
 $$('select[data-param]').forEach((s) => s.addEventListener('change', () => {
@@ -1862,7 +1871,9 @@ setK('upd_t', ult ? 'Datos actualizados: ' + fFH(ult) : 'Actualizando datos…')
 const ul = document.getElementById('upd-list'); if (!ul) return;
 ul.replaceChildren(...UPD_SRC.map(([id, lab, f]) => { const d = fe(id, f); const li = document.createElement('li'); const viejo = d && Date.now() - d > 30 * 3600e3; li.textContent = `${lab}: ${d ? fFH(d) : (dash.data(id).status === 'error' ? 'no se pudo cargar' : 'cargando…')}${f ? ' (archivo)' : ' (consulta)'}`; if (viejo) li.style.color = '#C26100'; return li; }));
 }
+function fitLin() { document.querySelectorAll('#kpis-base .qg-lin').forEach((el) => { let k = 1, n = 0; el.style.setProperty('--k', '1'); while (el.clientWidth && el.scrollWidth > el.clientWidth && n < 14) { k -= 0.025; n++; el.style.setProperty('--k', k.toFixed(3)); } }); }
 function draw() {
+requestAnimationFrame(fitLin);
 drawUpd();
 const B = dash.data('base');
 const Hd = dash.data('horas');
@@ -2240,7 +2251,6 @@ if (!goodUp) { const c = vn[0].className; vn[0].className = 'qg-var' + (/\bdown\
 const w = document.createElement('span'); w.className = 'qg-mpy'; w.append(span('PY ' + fN.format(v0), 'qg-mpy-v'), ...vn); setKNodes(k + '_py', [w]); };
 put('bi_cli', c1.cli, c0.cli, true); put('bi_tot', c1.tot, c0.tot, true); put('bi_act', c1.act, c0.act, true); put('bi_ina', c1.ina, c0.ina, false);
 /* Participación de activos / inactivos sobre el total de proyectos, con barrita */
-[['bi_act_pct', c1.act], ['bi_ina_pct', c1.ina]].forEach(([k, v]) => { const p = c1.tot ? v / c1.tot : 0; K(k).forEach((e) => { const bar = document.createElement('i'); bar.style.width = Math.round(p * 100) + '%'; const tx = document.createElement('span'); tx.textContent = `${fN.format(Math.round(p * 100))}% del total`; e.replaceChildren(tx, Object.assign(document.createElement('b'), { className: 'bi-bar' })); e.lastChild.append(bar); }); });
 /* Tooltip de cada número: los proyectos que cuenta (ID y nombre) */
 const tipProy = (k, titulo, lista, unidad) => {
 const n = K(k)[0]; if (!n) return; const col = n.parentElement;
@@ -2506,7 +2516,7 @@ const FX = new Map((FXd.status === 'ok' ? FXd.data : []).map((x) => [String(x.mo
 const SYM = { EUR: '€', USD: 'US$', ARS: '$' };
 const symOf = (c) => SYM[c] || c + ' ';
 const f2 = new Intl.NumberFormat('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const cashC = (v, c, dec) => (ok(v) ? (v < 0 ? '-' : '') + symOf(c) + (dec ? f2 : fN).format(Math.abs(v)) : '—');
+const cashC = (v, c, dec) => (ok(v) ? (v < 0 ? '-' : '') + symOf(c) + (!dec && Math.abs(v) >= 1e6 ? (Math.abs(v) / 1e6).toLocaleString('es-AR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' M' : (dec ? f2 : fN).format(Math.abs(v))) : '—');
 const cashK = (v, c) => (ok(v) ? (v < 0 ? '-' : '') + symOf(c) + fC.format(Math.abs(v)) : '—');
 const vsPct = (d, v) => (ok(d) && ok(v) && v !== 0 ? f2.format(((d - v) / Math.abs(v)) * 100) + '%' : '—');
 const putTk = (k, d, v, fmtV, unitFoot, goodIfUp) => {
