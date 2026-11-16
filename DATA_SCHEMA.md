@@ -14,7 +14,7 @@
 
 ```json
 {
-  "generated_at": "2026-10-29T17:01:48.080Z",
+  "generated_at": "2026-11-16T13:43:50.000Z",
   "title": "Base Instalada y Servicios",
   "datasets": {
     "<id>": {
@@ -51,7 +51,7 @@ Todos tienen claves exactas y sensibles a mayúsculas. Las columnas marcadas **c
 
 ### 2.1 `proyectos`: Listado de proyectos (Airtable › Gestión Servicios › Listado de Proyectos)
 
-Una fila por proyecto, activos y dados de baja, toda la historia. Hoy tiene 2.154 filas.
+Una fila por proyecto, activos y dados de baja, toda la historia. Hoy tiene 2.157 filas.
 
 | Columna | Tipo | Ejemplo | Notas |
 |---|---|---|---|
@@ -161,7 +161,7 @@ Un cambio de fase por fila. Se usa para la fecha real de WI y LO.
 | `oportunidad_id` | texto | `"3852010000061489001"` (= `crm.id`) |
 | `fase` | texto | `"WI-Cerrado ganado"` |
 | `fecha` | texto `AAAA-MM-DD` | `"2026-10-29"` |
-| `hora` | texto ISO | `"2026-10-29T11:56:58+01:00"` |
+| `hora` | texto ISO | `"2026-10-29T07:56:58-03:00"` (hora de Argentina) |
 
 ### 2.9 `devengado_monto`: Horas y monto devengado (Tableau › Services - Situación Proyecto, archivo)
 
@@ -293,3 +293,33 @@ Fuera de claude.ai estas columnas se ven pero no se pueden editar. Hoy el seguim
 3. Reemplazá `data.json` en la carpeta publicada. No hace falta tocar `index.html`.
 
 Para probarlo en tu equipo, serví la carpeta con un servidor web (por ejemplo `python -m http.server` y abrí `http://localhost:8000`). Si abrís `index.html` como archivo, el navegador bloquea la lectura de `data.json`.
+
+---
+
+## 6. Última actualización de data.json
+
+Copia generada el 2026-11-16 a las 13:43 UTC.
+
+| Conjunto | Origen | Filas | Fecha de los datos |
+|---|---|---|---|
+| `proyectos` | Airtable · list_records_for_table (consulta en vivo) | 2.157 | 2026-11-16 |
+| `historia` | Airtable · list_records_for_table (consulta en vivo) | 2.157 | 2026-11-16 |
+| `horas` | Airtable · list_records_for_table (consulta en vivo) | 2.198 | 2026-11-16 |
+| `montos` | Airtable · list_records_for_table (consulta en vivo) | 812 | 2026-11-16 |
+| `colaboradores` | Airtable · list_records_for_table (consulta en vivo) | 585 | 2026-11-16 |
+| `roles` | Airtable · list_records_for_table (consulta en vivo) | 199 | 2026-11-16 |
+| `crm` | Zoho CRM · executeCOQLQuery (consulta en vivo) | 3.468 | 2026-11-16 |
+| `crm_fases` | Zoho CRM · executeCOQLQuery (consulta en vivo) | 9.736 | 2026-11-16 |
+| `devengado_monto` | devengado_monto_tableau.csv (archivo) | 5.989 | 2026-10-29 |
+| `maestro` | maestro_proyectos.csv (archivo) | 1.790 | 2026-10-26 |
+| `control` | control_proyectos_oct26.csv (archivo) | 32 | 2026-10-21 |
+| `situacion` | situacion_proyecto_tableau.csv (archivo) | 1.147 | 2026-10-27 |
+| `tipos_cambio` | tipos_cambio.csv (archivo) | 3 | 2026-10-22 |
+
+Notas de esta actualización:
+
+- Airtable y Zoho CRM se volvieron a consultar completos. A los textos se les quitan los espacios al principio y al final.
+- Las fechas y horas de Zoho (`crm.Created_Time`, `crm.Last_Activity_Time`, `crm_fases.hora`) vienen en hora de Argentina (`-03:00`); `crm_fases.fecha` es el día en esa hora.
+- En el CRM cambiaron valores de listas: las oportunidades de tipo `Base Instalada - Quallie` y `New Name - Quallie` hoy figuran como `Base Instalada` y `New Name`, y los motivos de pérdida están en inglés (`Lack of response`, `Competition`, `Future Interest`, `Other`, `Price`). Se publican tal cual están en el CRM.
+- Los conjuntos que vienen de archivos (`devengado_monto`, `maestro`, `control`, `situacion`, `tipos_cambio`) son la última versión cargada en el tablero de claude.ai; no se pudieron volver a bajar de Tableau ni de los sheets. Su fecha es la de la columna de la derecha.
+- `seguimiento` sigue vacío: no hay cargas manuales en el tablero.
